@@ -1,0 +1,29 @@
+*, ::after, ::before{ padding: 0px; margin: 0px; box-sizing: border-box; list-style: none; list-style: none; }
+
+.input{
+    margin: 5px;
+    padding: 20px;
+}
+
+.descInput{
+    width: 140px;
+    height: 70px;
+    resize: none;
+    transition: 1s;
+    color: red;
+    border-radius: 25px;
+    box-shadow: 1000px;
+}
+.descInput:focus{
+    width: 500px;
+    height: 200px;
+    border-radius: 5px;
+    resize: none;
+    transition: 0.5s;
+}
+.descInput:focus:valid{
+    color: green;
+}
+.descInput:focus:invalid{
+    color: red;
+}

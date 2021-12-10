@@ -1,0 +1,28 @@
+    // * means that it selects all fields, you can also write: `id`, `title`, `text`
+    // articles is the name of our table
+
+    // '%$query%' is what we're looking for, % means anything, for example if $query is Hello
+    // it will match "hello", "Hello man", "gogohello", if you want exact match use `title`='$query'
+    // or if you want to match just full word so "gogohello" is out use '% $query %' ...OR ... '$query %' ... OR ... '% $query'
+
+
+    mot de passe site : 7&kWe3faeBlkVYkZ@3G1
+
+
+    $sql = "CREATE TABLE MyGuests (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(30) NOT NULL,
+    lastname VARCHAR(30) NOT NULL,
+    email VARCHAR(50),
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )";
+
+    $db->query($sql);
+
+    $sql = "INSERT INTO MyGuests (firstname, lastname, email) VALUES ('John', 'Doe', 'john@example.com')";
+    $db->query($sql);
+    
+    ?>
+
+
+SELECT * FROM `softwareid` WHERE id = 1 AND Addedat = 2021-11-09
