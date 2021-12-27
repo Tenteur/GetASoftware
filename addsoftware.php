@@ -50,20 +50,17 @@
         $db->exec($sql);
 
 
-        $sql = "CREATE TABLE {$softwarename} (
-        SoftName VARCHAR(100) PRIMARY KEY NOT NULL,
-        Desc1 TEXT(1000),
-        Desc2 TEXT(1000),
-        Video VARCHAR(255),
-        SoftEditor VARCHAR(255) NOT NULL,
-        IMG1 VARCHAR(255),
-        IMG2 VARCHAR(255)
-        )";
+        $sql = "CREATE TABLE {$softwarename} (SoftName VARCHAR(100) PRIMARY KEY NOT NULL, Desc1 TEXT(1000), Desc2 TEXT(1000), Video VARCHAR(255), SoftEditor VARCHAR(255) NOT NULL, IMG1 VARCHAR(255), IMG2 VARCHAR(255))";
 
         $db->exec($sql);
 
+        // $sql = "INSERT INTO '{$softwarename}' ('SoftName', 'Desc1', 'Desc2', 'SoftEditor') VALUES ('{$softwarename}', '{$softwaredesc1}', '{$softwaredesc2}', '{$softwarecreator}')";
+        $sql = "INSERT INTO $softwarename (SoftName, Desc1, Desc2, SoftEditor) VALUES ('test', 'testtest', 'testtesttest', 'testtesttest')";
 
-        $sql = "INSERT INTO $softwarename (SoftName, Desc1, Desc2, SoftEditor) VALUES ('{$softwarename}', '{$softwaredesc1}', '{$softwaredesc2}', '{$softwarecreator}', '{}')";
+        $db->exec($sql);
+
+        echo "table généré avec succes";
+        
     }
 
     ?>
