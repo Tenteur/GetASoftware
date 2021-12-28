@@ -10,7 +10,6 @@
     height: 70px;
     resize: none;
     transition: 1s;
-    color: red;
     border-radius: 25px;
     box-shadow: 1000px;
 }
@@ -21,9 +20,9 @@
     resize: none;
     transition: 0.5s;
 }
-.descInput:focus:valid{
+.descInput:valid{
     color: green;
 }
-.descInput:focus:invalid{
+.descInput:invalid{
     color: red;
 }

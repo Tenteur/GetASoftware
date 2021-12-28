@@ -22,6 +22,9 @@
         <!-- nom de l'image du logiciel -->
         <input type="input" class="input" name="softwareurl" id="softwareurl" placeholder="URL de la page" required>
         <!-- URL de la page --> <br>
+        <input type="checkbox" class="input" name="free" id="free" required>
+        <label for="free">gratuit ?</label>
+        <!-- le logiciel est gratuit ? --> <br>
         <textarea class="input descInput" name="softwaredesc1" id="softwaredesc1" placeholder="Description 1 du logiciel" minlength="50"></textarea>
         <!-- description1 du logiciel -->
         <textarea class="input descInput" name="softwaredesc2" id="softwaredesc2" placeholder="Description 2 du logiciel" minlength="50"></textarea>
@@ -55,7 +58,7 @@
         $db->exec($sql);
 
         // $sql = "INSERT INTO '{$softwarename}' ('SoftName', 'Desc1', 'Desc2', 'SoftEditor') VALUES ('{$softwarename}', '{$softwaredesc1}', '{$softwaredesc2}', '{$softwarecreator}')";
-        $sql = "INSERT INTO $softwarename (SoftName, Desc1, Desc2, SoftEditor) VALUES ('test', 'testtest', 'testtesttest', 'testtesttest')";
+        $sql = "INSERT INTO $softwarename (SoftName, Desc1, Desc2, SoftEditor) VALUES ('{$softwarename}', '{$softwaredesc1}', '{$softwaredesc2}', '{$softwarecreator}')";
 
         $db->exec($sql);
 
