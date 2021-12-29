@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="http://localhost/phpmyadmin/favicon.ico" type="image/x-icon">
     <title>GetASoftware - download software easily</title>
-
+    <?php include 'include/database.php'; ?>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <h1 class="header-text">téléchargez des logiciels sans souci, facilement et rapidement !</h1>
     </header>
 
-    <?php include 'include/database.php'; ?>
+    
 
     <form method="GET">
         <input type="input" class="input research-input" name="searchsoft" id="searchsoft" placeholder="recherchez votre logiciel">
@@ -68,22 +68,22 @@
 
             $searchconcated = $opt1 . $opt2 . $opt3 . $opt4;
 
-            $searchopt = $searchconcated;
-
-            $q = $db->query("{$searchopt}");
+            $q = $db->query("{$searchconcated}");
 
             while ($softwareid = $q->fetch()) {
+
                 $imagedir = $actual_link . "/src/image/" . $softwareid['ImageName'];
 
                 $siteurl = $softwareid['PageURL'];
                 $softname = $softwareid['SoftNames'];
+                $coucou = "softwaredetail.php?detail=" . $softwareid['SoftNames'] ;
 
-        ?> <div class="softdiv">
-                    <a href="<?php echo $siteurl ?>" class="SoftName">
-                        <h4><?php echo $softname ?></h4>
-                    </a>
-                    <img src="<?php echo $imagedir ?>" alt="<?php echo 'logo de ' . $softwareid['SoftNames'] ?>" class="SoftwareIMG">
-                </div>
+        ?>  <div class="softdiv" onclick="location.href='<?php echo $coucou ?>';">
+                <a href="<?php echo $siteurl ?>" class="SoftName">
+                    <h4><?php echo $softname ?></h4>
+                </a>
+                <img src="<?php echo $imagedir ?>" alt="<?php echo 'logo de ' . $softwareid['SoftNames'] ?>" class="SoftwareIMG">
+            </div>
 
         <?php
 

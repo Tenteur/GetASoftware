@@ -22,8 +22,8 @@
         <!-- nom de l'image du logiciel -->
         <input type="input" class="input" name="softwareurl" id="softwareurl" placeholder="URL de la page" required>
         <!-- URL de la page --> <br>
-        <input type="checkbox" class="input" name="free" id="free" required>
-        <label for="free">gratuit ?</label>
+        <!-- <input type="checkbox" class="input" name="free" id="free" required>
+        <label for="free">gratuit ?</label> -->
         <!-- le logiciel est gratuit ? --> <br>
         <textarea class="input descInput" name="softwaredesc1" id="softwaredesc1" placeholder="Description 1 du logiciel" minlength="50"></textarea>
         <!-- description1 du logiciel -->
@@ -40,6 +40,13 @@
 
     if (isset($_POST['formsend'])) {
 
+        $softwarename =  '';
+        $softwareimage = '';
+        $softwareurl =  '';
+        $softwaredesc1 = '';
+        $softwaredesc2 = '';
+        $softwarecreator = '';
+
         $softwarename =  $_POST['softwarename'];
         $softwareimage = $_POST['softwareimage'];
         $softwareurl =  $_POST['softwareurl'];
@@ -49,20 +56,18 @@
         $date = date('Y-m-d');
 
 
-        $sql = "INSERT INTO softwareid (SoftNames, ImageName, PageURL, AddedAt) VALUES ('{$softwarename}', '{$softwareimage}', '{$softwareurl}', '{$date}')";
-        $db->exec($sql);
+        // $sql = "INSERT INTO softwareid (SoftNames, ImageName, PageURL, AddedAt) VALUES ('{$softwarename}', '{$softwareimage}', '{$softwareurl}', '{$date}')";
+        // $db->exec($sql);
 
+        // $sql = "CREATE TABLE {$softwarename} (SoftName VARCHAR(100) PRIMARY KEY NOT NULL, Desc1 TEXT(1000), Desc2 TEXT(1000), Video VARCHAR(255), SoftEditor VARCHAR(255) NOT NULL, IMG1 VARCHAR(255), IMG2 VARCHAR(255))";
 
-        $sql = "CREATE TABLE {$softwarename} (SoftName VARCHAR(100) PRIMARY KEY NOT NULL, Desc1 TEXT(1000), Desc2 TEXT(1000), Video VARCHAR(255), SoftEditor VARCHAR(255) NOT NULL, IMG1 VARCHAR(255), IMG2 VARCHAR(255))";
+        // $db->exec($sql);
 
-        $db->exec($sql);
-
-        // $sql = "INSERT INTO '{$softwarename}' ('SoftName', 'Desc1', 'Desc2', 'SoftEditor') VALUES ('{$softwarename}', '{$softwaredesc1}', '{$softwaredesc2}', '{$softwarecreator}')";
-        $sql = "INSERT INTO $softwarename (SoftName, Desc1, Desc2, SoftEditor) VALUES ('{$softwarename}', '{$softwaredesc1}', '{$softwaredesc2}', '{$softwarecreator}')";
+        $sql = "INSERT INTO softwaredetail (SoftName, Desc1, Desc2, SoftEditor) VALUES ('{$softwarename}', '{$softwaredesc1}', '{$softwaredesc2}', '{$softwarecreator}')";
 
         $db->exec($sql);
 
-        echo "table généré avec succes";
+        echo "commande éxécuté avec succes";
         
     }
 

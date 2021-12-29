@@ -53,13 +53,12 @@ a{
 }
 
 .SoftwareIMG{
-    width: 50px;
-    margin-left: 75px;
-    margin-right: 75px;
+    width: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 37px;
+    margin-bottom: 37px;
 }
-/* .centerImage{
-    padding: 50px;
-} */
 
 .softdiv{
     border: 3px solid black;
@@ -87,7 +86,10 @@ a{
     align-items: stretch;
 }
 
-.SoftName
+.SoftName{
+    display: flex;
+    justify-content: center;
+}
 
 .inutile{
     margin-top: 40px;
