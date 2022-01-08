@@ -76,9 +76,9 @@
 
                 $siteurl = $softwareid['PageURL'];
                 $softname = $softwareid['SoftNames'];
-                $coucou = "softwaredetail.php?detail=" . $softwareid['SoftNames'] ;
+                $softwareurl = "pages/softwaredetail.php?detail=" . $softwareid['SoftNames'] ;
 
-        ?>  <div class="softdiv" onclick="location.href='<?php echo $coucou ?>';">
+        ?>  <div class="softdiv" onclick="location.href='<?php echo $softwareurl ?>';">
                 <a href="<?php echo $siteurl ?>" class="SoftName">
                     <h4><?php echo $softname ?></h4>
                 </a>

@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/addsoftwarestyle.css">
+    <link rel="stylesheet" href="../css/addsoftwarestyle.css">
     <title>add a software</title>
 
 </head>
 
 <body>
 
-    <?php include 'include/database.php' ?>
+    <?php include '../include/database.php'; ?>
 
-    <form method="POST">
+    <form method="POST" action="continueadding.php">
 
         <input type="input" class="input" name="softwarename" id="softwarename" placeholder="Nom du logiciel" required>
         <!-- mettre le nom du logiciel -->
@@ -31,12 +31,24 @@
         <!-- description2 du logiciel -->
         <input type="input" class="input" name="softwarecreator" id="softwarecreator" placeholder="créateur du logiciel" required>
         <!-- Éditeur du logiciel -->
+
+        <select class="input form-send" name="imageornot" id="imageornot">
+            <option value="0image" selected>aucune image</option>
+            <option value="1image">1 image</option>
+            <option value="2image">2 images</option>
+        </select>
+
         <input type="submit" class="input form-send" name="formsend" id="formsend">
     </form>
 
+    
+
     <?php
 
+    // unlink("../software file/file.txt");
 
+    // mkdir("src/" . $dossier);
+    // include '../include/softwarefile.php';
 
     if (isset($_POST['formsend'])) {
 
@@ -54,7 +66,10 @@
         $softwaredesc2 = $_POST['softwaredesc2'];
         $softwarecreator = $_POST['softwarecreator'];
         $date = date('Y-m-d');
+        $setimage = $_POST['imageornot'];
 
+        setcookie("setimage", $setimage, time() + 36000);
+        echo $_COOKIE['setimage'];
 
         // $sql = "INSERT INTO softwareid (SoftNames, ImageName, PageURL, AddedAt) VALUES ('{$softwarename}', '{$softwareimage}', '{$softwareurl}', '{$date}')";
         // $db->exec($sql);
@@ -63,13 +78,16 @@
 
         // $db->exec($sql);
 
-        $sql = "INSERT INTO softwaredetail (SoftName, Desc1, Desc2, SoftEditor) VALUES ('{$softwarename}', '{$softwaredesc1}', '{$softwaredesc2}', '{$softwarecreator}')";
+        // $sql = "INSERT INTO softwaredetail (SoftName, Desc1, Desc2, SoftEditor) VALUES ('{$softwarename}', '{$softwaredesc1}', '{$softwaredesc2}', '{$softwarecreator}')";
 
-        $db->exec($sql);
+        // $db->exec($sql);
 
         echo "commande éxécuté avec succes";
         
+
     }
+
+    
 
     ?>
 

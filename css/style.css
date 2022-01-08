@@ -76,6 +76,7 @@ a{
     transition: 0.3s;
     width: 215px;
     height: 215px;
+    /* transform: translate(-7.5px); */
 }
 
 .SoftList{
