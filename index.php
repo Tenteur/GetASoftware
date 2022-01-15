@@ -15,7 +15,6 @@
     <header class="header">
         <h1 class="header-text">téléchargez des logiciels sans souci, facilement et rapidement !</h1>
     </header>
-
     
 
     <form method="GET">
@@ -23,24 +22,24 @@
 
         <input type="checkbox" class="input check-input" name="free" id="free">
         <label for="free">Logiciel gratuit</label>
-        
+
         <input type="checkbox" class="input check-input" name="pay" id="pay">
         <label for="pay">logiciel payant</label>
-        
+
         <input type="checkbox" class="input check-input" name="trial" id="trial">
         <label for="trial">logiciel en version d'essai</label>
 
         <input type="submit" class="input form-send" id="formsend">
     </form>
 
-    <a href="addsoftware.php">clique moi</a>
+    <a href="pages/addsoftware.php">clique moi</a>
 
     <?php
 
     $opt2 = "";
     $opt3 = "";
     $opt4 = "";
-    
+
     if (isset($_GET['free'])) {
         $opt2 = " AND free = 'free'";
     }
@@ -55,16 +54,16 @@
     <div class="SoftList">
         <?php
 
-        
+
 
         $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 
         if (isset($_GET['searchsoft'])) {
-            
+
             $searchsoft = $_GET['searchsoft'];
 
             $opt1 = "SELECT * FROM softwareid WHERE SoftNames LIKE '%{$searchsoft}%'";
-            
+
 
             $searchconcated = $opt1 . $opt2 . $opt3 . $opt4;
 
@@ -76,14 +75,14 @@
 
                 $siteurl = $softwareid['PageURL'];
                 $softname = $softwareid['SoftNames'];
-                $softwareurl = "pages/softwaredetail.php?detail=" . $softwareid['SoftNames'] ;
+                $softwareurl = "pages/softwaredetail.php?detail=" . $softwareid['SoftNames'];
 
-        ?>  <div class="softdiv" onclick="location.href='<?php echo $softwareurl ?>';">
-                <a href="<?php echo $siteurl ?>" class="SoftName">
-                    <h4><?php echo $softname ?></h4>
-                </a>
-                <img src="<?php echo $imagedir ?>" alt="<?php echo 'logo de ' . $softwareid['SoftNames'] ?>" class="SoftwareIMG">
-            </div>
+        ?> <div class="softdiv" onclick="location.href='<?php echo $softwareurl ?>';">
+                    <a href="<?php echo $siteurl ?>" class="SoftName">
+                        <h4><?php echo $softname ?></h4>
+                    </a>
+                    <img src="<?php echo $imagedir ?>" alt="<?php echo 'logo de ' . $softwareid['SoftNames'] ?>" class="SoftwareIMG">
+                </div>
 
         <?php
 

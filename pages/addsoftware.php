@@ -14,7 +14,7 @@
 
     <?php include '../include/database.php'; ?>
 
-    <form method="POST" action="continueadding.php">
+    <form method="POST">
 
         <input type="input" class="input" name="softwarename" id="softwarename" placeholder="Nom du logiciel" required>
         <!-- mettre le nom du logiciel -->
@@ -68,8 +68,11 @@
         $date = date('Y-m-d');
         $setimage = $_POST['imageornot'];
 
-        setcookie("setimage", $setimage, time() + 36000);
-        echo $_COOKIE['setimage'];
+        setcookie("SetImage", $setimage, 0);
+        setcookie("SoftwareName", $softwarename, 0); 
+        setcookie("SoftwareDesc1", $softwaredesc1, 0);
+        setcookie("SoftwareDesc2", $softwaredesc2, 0);
+        setcookie("SoftwareCreator", $softwarecreator, 0);
 
         // $sql = "INSERT INTO softwareid (SoftNames, ImageName, PageURL, AddedAt) VALUES ('{$softwarename}', '{$softwareimage}', '{$softwareurl}', '{$date}')";
         // $db->exec($sql);
@@ -83,13 +86,16 @@
         // $db->exec($sql);
 
         echo "commande éxécuté avec succes";
-        
+        sleep(0.2);
 
+        ?><script>
+        location.replace("continueadding.php")
+        </script><?php
     }
 
-    
-
     ?>
+
+
 
 </body>
 
