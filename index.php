@@ -15,7 +15,7 @@
     <header class="header">
         <h1 class="header-text">téléchargez des logiciels sans souci, facilement et rapidement !</h1>
     </header>
-    
+
 
     <form method="GET">
         <input type="input" class="input research-input" name="searchsoft" id="searchsoft" placeholder="recherchez votre logiciel">
@@ -39,22 +39,26 @@
     $opt2 = "";
     $opt3 = "";
     $opt4 = "";
+    $ParamNum = 0;
 
     if (isset($_GET['free'])) {
-        $opt2 = " AND free = 'free'";
+        $ParamNum = $ParamNum + 1;
+        $opt2 = "'free', ";
     }
     if (isset($_GET['trial'])) {
-        $opt3 = " AND free = 'trial'";
+        $ParamNum = $ParamNum + 1;
+        $opt3 = "'trial', ";
     }
-    if (isset($_GET['pay'])) {
-        $opt4 = " AND free = 'pay'";
+    if (isset($_GET['pay'])){
+        $ParamNum = $ParamNum + 1;
+        $opt4 = "'pay', ";
     }
     ?>
 
     <div class="SoftList">
         <?php
 
-
+        
 
         $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 
@@ -64,10 +68,15 @@
 
             $opt1 = "SELECT * FROM softwareid WHERE SoftNames LIKE '%{$searchsoft}%'";
 
+            if ($ParamNum = 1) {
+                $concatedOPT = $opt2 . $opt3 . $opt4;
+                $concatedOPT = rtrim($concatedOPT, " ");
+                $concatedOPT = rtrim($concatedOPT, ",");
+                $thing = $opt1 . "AND free IN ( " . $concatedOPT . " )";
+            }
 
-            $searchconcated = $opt1 . $opt2 . $opt3 . $opt4;
 
-            $q = $db->query("{$searchconcated}");
+            $q = $db->query("{$thing}");
 
             while ($softwareid = $q->fetch()) {
 

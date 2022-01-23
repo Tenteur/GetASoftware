@@ -25,9 +25,9 @@
         <!-- <input type="checkbox" class="input" name="free" id="free" required>
         <label for="free">gratuit ?</label> -->
         <!-- le logiciel est gratuit ? --> <br>
-        <textarea class="input descInput" name="softwaredesc1" id="softwaredesc1" placeholder="Description 1 du logiciel" minlength="50"></textarea>
+        <textarea class="input descInput" name="softwaredesc1" id="softwaredesc1" placeholder="Description 1 du logiciel" minlength="50" maxlength="3000"></textarea>
         <!-- description1 du logiciel -->
-        <textarea class="input descInput" name="softwaredesc2" id="softwaredesc2" placeholder="Description 2 du logiciel" minlength="50"></textarea>
+        <textarea class="input descInput" name="softwaredesc2" id="softwaredesc2" placeholder="Description 2 du logiciel" minlength="50" maxlength="3000"></textarea>
         <!-- description2 du logiciel -->
         <input type="input" class="input" name="softwarecreator" id="softwarecreator" placeholder="créateur du logiciel" required>
         <!-- Éditeur du logiciel -->
@@ -41,7 +41,7 @@
         <input type="submit" class="input form-send" name="formsend" id="formsend">
     </form>
 
-    
+
 
     <?php
 
@@ -69,7 +69,7 @@
         $setimage = $_POST['imageornot'];
 
         setcookie("SetImage", $setimage, 0);
-        setcookie("SoftwareName", $softwarename, 0); 
+        setcookie("SoftwareName", $softwarename, 0);
         setcookie("SoftwareDesc1", $softwaredesc1, 0);
         setcookie("SoftwareDesc2", $softwaredesc2, 0);
         setcookie("SoftwareCreator", $softwarecreator, 0);
@@ -88,12 +88,12 @@
         echo "commande éxécuté avec succes";
         sleep(0.2);
 
-        ?><script>
-        location.replace("continueadding.php")
+    ?><script>
+            location.replace("continueadding.php")
         </script><?php
-    }
+                }
 
-    ?>
+                    ?>
 
 
 
