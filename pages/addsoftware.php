@@ -88,12 +88,10 @@
         echo "commande éxécuté avec succes";
         sleep(0.2);
 
-    ?><script>
+  ?><script>
             location.replace("continueadding.php")
-        </script><?php
-                }
-
-                    ?>
+    </script>
+ <?php } ?>
 
 
 
