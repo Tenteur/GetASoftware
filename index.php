@@ -9,6 +9,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>GetASoftware - download software easily</title>
     <?php include 'include/database.php'; ?>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5179921350383124" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -49,7 +50,7 @@
         $ParamNum = $ParamNum + 1;
         $opt3 = "'trial', ";
     }
-    if (isset($_GET['pay'])){
+    if (isset($_GET['pay'])) {
         $ParamNum = $ParamNum + 1;
         $opt4 = "'pay', ";
     }
@@ -58,7 +59,7 @@
     <div class="SoftList">
         <?php
 
-        
+
 
         $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 
@@ -81,7 +82,7 @@
                 $concatedOPT = $opt2 . $opt3 . $opt4;
                 $concatedOPT = rtrim($concatedOPT, " ");
                 $concatedOPT = rtrim($concatedOPT, ",");
-                
+
                 $thing = $opt1 . "AND free IN ( " . $concatedOPT . " )";
             }
 
