@@ -68,10 +68,20 @@
 
             $opt1 = "SELECT * FROM softwareid WHERE SoftNames LIKE '%{$searchsoft}%'";
 
-            if ($ParamNum = 1) {
+            if ($ParamNum >= 1) {
                 $concatedOPT = $opt2 . $opt3 . $opt4;
                 $concatedOPT = rtrim($concatedOPT, " ");
                 $concatedOPT = rtrim($concatedOPT, ",");
+                $thing = $opt1 . "AND free IN ( " . $concatedOPT . " )";
+            } else {
+                $opt2 = "'free', ";
+                $opt3 = "'trial', ";
+                $opt4 = "'pay', ";
+
+                $concatedOPT = $opt2 . $opt3 . $opt4;
+                $concatedOPT = rtrim($concatedOPT, " ");
+                $concatedOPT = rtrim($concatedOPT, ",");
+                
                 $thing = $opt1 . "AND free IN ( " . $concatedOPT . " )";
             }
 
