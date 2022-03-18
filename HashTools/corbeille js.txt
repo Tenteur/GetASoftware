@@ -1,3 +1,0 @@
-const xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "request.php?originalchar=" + ids.next());
-        xhttp.send();
