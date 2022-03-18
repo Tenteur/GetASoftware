@@ -33,9 +33,9 @@
         <!-- Éditeur du logiciel -->
 
         <select class="input form-send" name="imageornot" id="imageornot">
-            <option value="0image" selected>aucune image</option>
-            <option value="1image">1 image</option>
-            <option value="2image">2 images</option>
+            <option value="0" selected>aucune image</option>
+            <option value="1">1 image</option>
+            <option value="2">2 images</option>
         </select>
 
         <input type="submit" class="input form-send" name="formsend" id="formsend">
@@ -76,23 +76,15 @@
 
         // $sql = "INSERT INTO softwareid (SoftNames, ImageName, PageURL, AddedAt) VALUES ('{$softwarename}', '{$softwareimage}', '{$softwareurl}', '{$date}')";
         // $db->exec($sql);
-
         // $sql = "CREATE TABLE {$softwarename} (SoftName VARCHAR(100) PRIMARY KEY NOT NULL, Desc1 TEXT(1000), Desc2 TEXT(1000), Video VARCHAR(255), SoftEditor VARCHAR(255) NOT NULL, IMG1 VARCHAR(255), IMG2 VARCHAR(255))";
-
         // $db->exec($sql);
-
         // $sql = "INSERT INTO softwaredetail (SoftName, Desc1, Desc2, SoftEditor) VALUES ('{$softwarename}', '{$softwaredesc1}', '{$softwaredesc2}', '{$softwarecreator}')";
-
         // $db->exec($sql);
 
-        echo "commande éxécuté avec succes";
+        // echo "commande éxécuté avec succes";
         sleep(0.2);
 
-  ?><script>
-            location.replace("continueadding.php")
-    </script>
- <?php } ?>
-
+  ?> <script> location.replace("continueadding.php") </script> <?php } ?>
 
 
 </body>

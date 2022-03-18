@@ -1,0 +1,48 @@
+<!DOCTYPE HTML> 
+<html> 
+  
+<head> 
+    <title> 
+        JavaScript method to increment/
+        decrement letters
+    </title>
+</head>
+  
+<body style = "text-align:center;">
+      
+    <h1 style = "color:green;"> 
+        GeeksForGeeks 
+    </h1>
+      
+    <p id = "GFG_UP" style = 
+        "font-size: 15px; font-weight: bold;">
+    </p>
+      
+    <button onclick = "GFG_Fun()">
+        click here
+    </button>
+      
+    <p id = "GFG_DOWN" style = 
+        "color:green; font-size: 20px; font-weight: bold;">
+    </p>
+      
+    <script> 
+        var up = document.getElementById('GFG_UP');
+        var down = document.getElementById('GFG_DOWN');
+          
+        up.innerHTML = "Click on the button to increment "
+                    + "the letter.";
+        down.innerHTML = 'a';
+          
+        function nextCharacter(c) {
+            return String.fromCharCode(c.charCodeAt(0) + 1);
+        }
+          
+        function GFG_Fun() {
+            var c = down.innerHTML;
+            down.innerHTML = nextCharacter(c);
+        }
+    </script> 
+</body> 
+  
+</html>

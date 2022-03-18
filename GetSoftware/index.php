@@ -13,9 +13,8 @@
 </head>
 
 <body>
-    <header class="header">
-        <h1 class="header-text">téléchargez des logiciels sans souci, facilement et rapidement !</h1>
-    </header>
+    
+    <?php include "reusable/pages/header.html" ?>
 
 
     <form method="GET">
@@ -91,7 +90,7 @@
 
             while ($softwareid = $q->fetch()) {
 
-                $imagedir = $actual_link . "/src/image/" . $softwareid['ImageName'];
+                $imagedir = $actual_link . "/GetSoftware/src/image/" . $softwareid['ImageName'];
 
                 $siteurl = $softwareid['PageURL'];
                 $softname = $softwareid['SoftNames'];
@@ -114,7 +113,13 @@
     </div>
 
     <h2 class="inutile">ipsum dolor sit amet consectetur adipisicing elit. Tempore odio expedita facilis aperiam dolorem eos consequuntur eveniet officia labore culpa repudiandae tempora obcaecati, aspernatur sit rerum veniam nulla magnam cumque.</h2>
+    <?php include "reusable/pages/footer.html" ?>
 
+    <style>
+        .SoftName{
+            color: black;
+        }
+    </style>
 </body>
 
 </html>

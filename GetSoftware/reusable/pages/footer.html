@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" src="../css/footer.css">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+        
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300);
+
+        body {
+            font-family: 'Alegreya Sans', sans-serif;
+        }
+
+        /* Sticky footer position and size
+-------------------------------------------------- */
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            /* Margin bottom by footer height */
+            margin-bottom: 300px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            /* Set the fixed height of the footer here */
+            height: 300px;
+        }
+
+        /* Taller footer on small screens */
+        @media (max-width: 567em) {
+            body {
+                margin-bottom: 300px;
+            }
+
+            .footer {
+                height: 300px;
+            }
+        }
+
+        /* Sticky footer style and color
+-------------------------------------------------- */
+        footer {
+            padding-top: 30px;
+            background-color: #292c2f;
+            color: #bbb;
+        }
+
+        footer .div-footer {
+            color: #999;
+            text-decoration: none;
+        }
+
+        footer a:hover,
+        footer a:focus {
+            color: #aaa;
+            text-decoration: none;
+            border-bottom: 1px double #999;
+            transition: 0.5s;
+        }
+
+        footer .form-control {
+            background-color: #1f2022;
+            box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+            border: none;
+            resize: none;
+            color: #d1d2d2;
+            padding: 0.7em 1em;
+        }
+
+
+        /* Credits: https://www.codeply.com/p/EJd6H4Ejyi */
+        /* EOS */
+    </style>
+
+    
+</head>
+
+<body>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <h5><i class="fa fa-road"></i> ACME CO INC.</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a href="" class="div-footer">Product</a></li>
+                                <li><a href="" class="div-footer">Benefits</a></li>
+                                <li><a href="" class="div-footer">Partners</a></li>
+                                <li><a href="" class="div-footer">Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a href="" class="div-footer">Documentation</a></li>
+                                <li><a href="" class="div-footer">Support</a></li>
+                                <li><a href="" class="div-footer">Legal Terms</a></li>
+                                <li><a href="" class="div-footer">About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="nav">
+                        <li class="nav-item"><a href="" class="nav-link pl-0"><i class="fa fa-facebook fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-twitter fa-lg"></i></a></li>
+                        <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-github fa-lg"></i></a></li>
+                        <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-instagram fa-lg"></i></a></li>
+                    </ul>
+                    <br>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="text-md-right">Contact Us</h5>
+                    <hr>
+                </div>
+                <div class="col-md-5">
+                    <form>
+                        <fieldset class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
+                        </fieldset>
+                        <fieldset class="form-group text-xs-right">
+                            <button type="button" class="btn btn-secondary-outline btn-lg">Send</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- credits: https://www.codeply.com/p/EJd6H4Ejyi -->
+
+    <script type="text/javascript">//<![CDATA[
+
+
+
+
+
+
+  //]]></script>
+
+    <script>
+        // tell the embed parent frame the height of the content
+        if (window.parent && window.parent.parent) {
+            window.parent.parent.postMessage(["resultsFrame", {
+                height: document.body.getBoundingClientRect().height,
+                slug: "5td4ogy1"
+            }], "*")
+        }
+
+        // always overwrite window.name, in case users try to set it manually
+        window.name = "result"
+    </script>
+
+    <script>
+        let allLines = []
+
+        window.addEventListener("message", (message) => {
+            if (message.data.console) {
+                let insert = document.querySelector("#insert")
+                allLines.push(message.data.console.payload)
+                insert.innerHTML = allLines.join(";\r")
+
+                let result = eval.call(null, message.data.console.payload)
+                if (result !== undefined) {
+                    console.log(result)
+                }
+            }
+        })
+    </script>
+
+
+
+</body>
+</html>

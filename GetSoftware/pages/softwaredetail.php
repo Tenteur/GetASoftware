@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>titre de la page</title>
+    <title><?php echo "detail de: " . $_GET['detail'];?></title>
     <?php include '../include/database.php'; ?>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5179921350383124" crossorigin="anonymous"></script>
+    <?php include '../reusable/pages/header.html' ?>
 </head>
 
 <body>
